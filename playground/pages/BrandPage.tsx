@@ -37,80 +37,82 @@ export function BrandPage() {
         title="Brand marks"
         description="Logo and icon from the outlined master paths. The marks are not covered by the code licence."
       />
-      <SectionCard
-        title="Intro animation"
-        actions={
-          <Button variant="outlined" size="small" onClick={replay}>
-            Replay
-          </Button>
-        }
-      >
-        <Stack spacing={2}>
-          {(['adaptive', 'reversed'] as const).map((variant) => (
-            <Box
-              key={variant}
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                p: 5,
-                borderRadius: 2,
-                bgcolor:
-                  variant === 'reversed'
-                    ? brandColors.navy
-                    : 'background.paper',
-                border: '1px solid',
-                borderColor: 'border.subtle',
-              }}
-            >
-              <AnimatedBrandLogo
-                key={run}
-                variant={variant}
-                height={56}
-                onFinish={
-                  variant === 'adaptive' ? () => setFinished(true) : undefined
-                }
-              />
-            </Box>
-          ))}
-          <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-            {finished ? 'Finished' : 'Playing'}
-          </Typography>
-        </Stack>
-      </SectionCard>
-      <SectionCard title="Variants">
-        <Stack spacing={2}>
-          {VARIANTS.map(({ variant, background }) => (
-            <Stack
-              key={variant}
-              direction={{ xs: 'column', sm: 'row' }}
-              spacing={3}
-              sx={{
-                alignItems: { sm: 'center' },
-                p: 3,
-                borderRadius: 2,
-                bgcolor: background,
-                border: '1px solid',
-                borderColor: 'border.subtle',
-              }}
-            >
-              <BrandLogo variant={variant} height={32} />
-              <BrandIcon variant={variant} height={32} />
-              <Box sx={{ flexGrow: 1 }} />
-              <Typography
-                variant="caption"
+      <Stack spacing={3}>
+        <SectionCard
+          title="Intro animation"
+          actions={
+            <Button variant="outlined" size="small" onClick={replay}>
+              Replay
+            </Button>
+          }
+        >
+          <Stack spacing={2}>
+            {(['adaptive', 'reversed'] as const).map((variant) => (
+              <Box
+                key={variant}
                 sx={{
-                  color:
-                    background === brandColors.navy
-                      ? '#FFFFFF'
-                      : 'text.secondary',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  p: 5,
+                  borderRadius: 2,
+                  bgcolor:
+                    variant === 'reversed'
+                      ? brandColors.navy
+                      : 'background.paper',
+                  border: '1px solid',
+                  borderColor: 'border.subtle',
                 }}
               >
-                {variant}
-              </Typography>
-            </Stack>
-          ))}
-        </Stack>
-      </SectionCard>
+                <AnimatedBrandLogo
+                  key={run}
+                  variant={variant}
+                  height={56}
+                  onFinish={
+                    variant === 'adaptive' ? () => setFinished(true) : undefined
+                  }
+                />
+              </Box>
+            ))}
+            <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+              {finished ? 'Finished' : 'Playing'}
+            </Typography>
+          </Stack>
+        </SectionCard>
+        <SectionCard title="Variants">
+          <Stack spacing={2}>
+            {VARIANTS.map(({ variant, background }) => (
+              <Stack
+                key={variant}
+                direction={{ xs: 'column', sm: 'row' }}
+                spacing={3}
+                sx={{
+                  alignItems: { sm: 'center' },
+                  p: 3,
+                  borderRadius: 2,
+                  bgcolor: background,
+                  border: '1px solid',
+                  borderColor: 'border.subtle',
+                }}
+              >
+                <BrandLogo variant={variant} height={32} />
+                <BrandIcon variant={variant} height={32} />
+                <Box sx={{ flexGrow: 1 }} />
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color:
+                      background === brandColors.navy
+                        ? '#FFFFFF'
+                        : 'text.secondary',
+                  }}
+                >
+                  {variant}
+                </Typography>
+              </Stack>
+            ))}
+          </Stack>
+        </SectionCard>
+      </Stack>
     </>
   );
 }
