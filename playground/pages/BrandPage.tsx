@@ -1,7 +1,10 @@
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import { useState } from 'react';
 import {
+  AnimatedBrandLogo,
   BrandIcon,
   BrandLogo,
   brandColors,
@@ -19,6 +22,14 @@ const VARIANTS: { variant: BrandMarkVariant; background: string }[] = [
 ];
 
 export function BrandPage() {
+  const [run, setRun] = useState(0);
+  const [finished, setFinished] = useState(false);
+
+  const replay = () => {
+    setFinished(false);
+    setRun((value) => value + 1);
+  };
+
   return (
     <>
       <PageHeader
@@ -26,6 +37,46 @@ export function BrandPage() {
         title="Brand marks"
         description="Logo and icon from the outlined master paths. The marks are not covered by the code licence."
       />
+      <SectionCard
+        title="Intro animation"
+        actions={
+          <Button variant="outlined" size="small" onClick={replay}>
+            Replay
+          </Button>
+        }
+      >
+        <Stack spacing={2}>
+          {(['adaptive', 'reversed'] as const).map((variant) => (
+            <Box
+              key={variant}
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                p: 5,
+                borderRadius: 2,
+                bgcolor:
+                  variant === 'reversed'
+                    ? brandColors.navy
+                    : 'background.paper',
+                border: '1px solid',
+                borderColor: 'border.subtle',
+              }}
+            >
+              <AnimatedBrandLogo
+                key={run}
+                variant={variant}
+                height={56}
+                onFinish={
+                  variant === 'adaptive' ? () => setFinished(true) : undefined
+                }
+              />
+            </Box>
+          ))}
+          <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+            {finished ? 'Finished' : 'Playing'}
+          </Typography>
+        </Stack>
+      </SectionCard>
       <SectionCard title="Variants">
         <Stack spacing={2}>
           {VARIANTS.map(({ variant, background }) => (

@@ -22,6 +22,10 @@ export {
 } from './theme/DirektAmtThemeProvider.js';
 export * from './theme/ThemeAugmentation.js';
 
+export {
+  AnimatedBrandLogo,
+  type AnimatedBrandLogoProps,
+} from './brand/AnimatedBrandLogo.js';
 export { BrandIcon, type BrandIconProps } from './brand/BrandIcon.js';
 export { BrandLogo, type BrandLogoProps } from './brand/BrandLogo.js';
 export type { BrandMarkVariant } from './brand/BrandColors.js';

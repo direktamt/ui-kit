@@ -11,7 +11,8 @@ and a few layout components on top of Material UI.
   dark colour schemes through Material UI CSS variables, Inter and Inter
   Display, flat surfaces (no shadows, no ripple), sentence-case buttons,
   visible focus ring, right-to-left support.
-- **Brand**: `BrandLogo`, `BrandIcon`, `ProductLockup`, favicon files.
+- **Brand**: `BrandLogo`, `AnimatedBrandLogo` (one-time intro, static under
+  reduced motion), `BrandIcon`, `ProductLockup`, favicon files.
 - **Components**: `AppShell`, `NavigationList`, `NavigationItem`,
   `PageHeader`, `SectionCard`, `DescriptionList`, `CodeBlock`, `EmptyState`,
   `LoadingState`, `ColorSchemeToggle`.
