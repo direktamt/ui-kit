@@ -11,7 +11,9 @@ and a few layout components on top of Material UI.
   dark colour schemes through Material UI CSS variables, Inter and Inter
   Display, flat surfaces (no shadows, no ripple), sentence-case buttons,
   visible focus ring, right-to-left support.
-- **Brand**: `BrandLogo`, `BrandIcon`, `ProductLockup`, favicon files.
+- **Brand**: `BrandLogo`, `BrandIcon`, `ProductLockup` and the full brand kit
+  in `assets/` (logos, icons, favicons, avatar), specified in
+  `assets/README.md`.
 - **Components**: `AppShell`, `NavigationList`, `NavigationItem`,
   `PageHeader`, `SectionCard`, `DescriptionList`, `CodeBlock`, `EmptyState`,
   `LoadingState`, `ColorSchemeToggle`.
