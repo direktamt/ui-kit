@@ -46,7 +46,7 @@ export function PlaygroundApp() {
   return (
     <DirektAmtThemeProvider direction={direction}>
       <AppShell
-        brand={<ProductLockup product="UI kit" href="#colors" />}
+        brand={<ProductLockup product="UI kit" href="#colors" animated />}
         headerActions={
           <>
             <Tooltip title="Toggle text direction">
