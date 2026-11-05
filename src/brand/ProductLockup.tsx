@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
+import { AnimatedBrandLogo } from './AnimatedBrandLogo.js';
 import { BrandLogo } from './BrandLogo.js';
 
 export interface ProductLockupProps {
@@ -10,6 +11,8 @@ export interface ProductLockupProps {
   href?: string;
   /** Logo height in pixels. */
   logoHeight?: number;
+  /** Plays the logo intro once on mount; static under reduced motion. */
+  animated?: boolean;
 }
 
 /**
@@ -19,10 +22,12 @@ export function ProductLockup({
   product,
   href,
   logoHeight = 22,
+  animated = false,
 }: ProductLockupProps) {
+  const Logo = animated ? AnimatedBrandLogo : BrandLogo;
   const content = (
     <>
-      <BrandLogo height={logoHeight} />
+      <Logo height={logoHeight} />
       {product && (
         <>
           <Box
