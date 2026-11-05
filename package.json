@@ -1,0 +1,109 @@
+{
+  "name": "@direktamt/ui-kit",
+  "version": "0.1.0",
+  "description": "DirektAmt design tokens, Material UI theme, brand marks and shared React components.",
+  "license": "Apache-2.0",
+  "author": "Nihad Jabrayilzade",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/direktamt/ui-kit.git"
+  },
+  "homepage": "https://github.com/direktamt/ui-kit#readme",
+  "bugs": {
+    "url": "https://github.com/direktamt/ui-kit/issues"
+  },
+  "keywords": [
+    "direktamt",
+    "design-tokens",
+    "mui",
+    "material-ui",
+    "react",
+    "theme"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "**/*.css",
+    "./dist/Fonts.js"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./fonts": {
+      "types": "./dist/Fonts.d.ts",
+      "default": "./dist/Fonts.js"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./assets/*": "./assets/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "assets",
+    "!dist/**/*.spec.*"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && node scripts/BuildTokensCss.ts",
+    "build:playground": "vite build",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint . && prettier --check .",
+    "lint:fix": "eslint . --fix && prettier --write .",
+    "test": "vitest run",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build",
+    "prepare": "husky",
+    "prepublishOnly": "npm run check"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^9.5.0",
+    "react": "^18.3.0 || ^19.0.0",
+    "react-dom": "^18.3.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@mui/stylis-plugin-rtl": "^9.5.0",
+    "stylis": "^4.4.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,json,md,yml,yaml,css,html}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@eslint/js": "^10.0.1",
+    "@mui/material": "^9.5.0",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/stylis": "^4.2.7",
+    "@vitejs/plugin-react": "^6.2.1",
+    "eslint": "^10.14.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.10",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^8.3.6",
+    "vitest": "^4.1.12"
+  }
+}

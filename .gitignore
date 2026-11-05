@@ -1,0 +1,21 @@
+# Dependencies and build output
+node_modules/
+dist/
+dist-playground/
+coverage/
+*.tsbuildinfo
+*.tgz
+
+# Local environment files and overrides
+.env
+.env.*
+*.local
+.husky/_/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+*.log

@@ -1,0 +1,5 @@
+dist
+dist-playground
+coverage
+package-lock.json
+assets
