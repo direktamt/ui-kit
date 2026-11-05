@@ -12,7 +12,9 @@ and a few layout components on top of Material UI.
   Display, flat surfaces (no shadows, no ripple), sentence-case buttons,
   visible focus ring, right-to-left support.
 - **Brand**: `BrandLogo`, `AnimatedBrandLogo` (one-time intro, static under
-  reduced motion), `BrandIcon`, `ProductLockup`, favicon files.
+  reduced motion), `BrandIcon`, `ProductLockup` and the full brand kit in
+  `assets/` (logos, icons, favicons, avatar), specified in
+  `assets/README.md`.
 - **Components**: `AppShell`, `NavigationList`, `NavigationItem`,
   `PageHeader`, `SectionCard`, `DescriptionList`, `CodeBlock`, `EmptyState`,
   `LoadingState`, `ColorSchemeToggle`.

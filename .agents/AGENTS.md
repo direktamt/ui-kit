@@ -12,8 +12,9 @@ Layout: `src/tokens/` (colours, typography, layout, contrast checks),
 `src/brand/` (logo, icon, lockup), `src/components/` (shell and page
 building blocks), `src/icons/` (inlined icons), `src/index.ts` (the only
 public entry point besides `src/Fonts.ts`), `playground/` (local Vite
-preview, not published), `scripts/` (build helpers), `assets/` (published
-brand files).
+preview, not published), `scripts/` (build helpers), `assets/` (the
+brand kit, published, specified in `assets/README.md`; the single source
+of the brand).
 
 ## Hard conventions
 
